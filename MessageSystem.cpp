@@ -1,8 +1,8 @@
 #include "MessageSystem.h"
 
-MessageSystem::MessageSystem(){ }
+MessageSystem::MessageSystem() { }
 
-MessageSystem::~MessageSystem(){ }
+MessageSystem::~MessageSystem() { }
 
 void MessageSystem::commitAll()
 {
@@ -33,7 +33,7 @@ void MessageSystem::printAllActiveMessagesOfSameType(MessageType const type)
 }
 
 ///Returns the message at the specified index
-std::shared_ptr<BaseMessage>& MessageSystem::getMessage(std::size_t const index)
+const std::shared_ptr<BaseMessage>& MessageSystem::getMessage(std::size_t const index)
 {
     if (index < (queue.count()))
     {
@@ -80,9 +80,9 @@ bool MessageSystem::empty() const
 /// Returns true if collection of messages is empty for the given type, false if is not.
 bool MessageSystem::empty(MessageType const type) const
 {
-    if (queue.count(type)>0)
+    if (queue.count(type) > 0)
     {
-        return false; 
+        return false;
     }
     return true;
 }

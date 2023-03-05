@@ -48,7 +48,7 @@ public:
     void printAllActiveMessagesOfSameType(MessageType const type);
 
     /// Returns the message at the specified index
-    std::shared_ptr<BaseMessage>& getMessage(std::size_t const index);
+    const std::shared_ptr<BaseMessage>& getMessage(std::size_t const index);
 
     /// Returns the begin iterator over all messages of the given type.
     const_iterator begin() const;
@@ -67,7 +67,7 @@ public:
 
     /// Returns true if collection of messages is empty for the given type, false if is not.
     bool empty(MessageType const type) const;
- 
+
 private:
     /// Collection of all active/pending messages of any type.
     MessageQueue queue;

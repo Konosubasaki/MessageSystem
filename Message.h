@@ -10,6 +10,7 @@ class Message
 {
 public:
     Message() {}
+    virtual ~Message() {}
 };
 
 /// Base class for all messages.
@@ -19,16 +20,16 @@ public:
     BaseMessage() {}
     virtual ~BaseMessage() {}
     virtual MessageType type() = 0;
-    virtual void printMessage() = 0; 
- };
+    virtual void printMessage() = 0;
+};
 
-class DamageMessage : public BaseMessage 
+class DamageMessage : public BaseMessage
 {
 public:
     DamageMessage() {}
-    ~DamageMessage() {}
-    void printMessage() override  {
-        std::cout << "---I am damage message---"<< std::endl;
+    virtual ~DamageMessage() {}
+    void printMessage() override {
+        std::cout << "---I am damage message---" << std::endl;
     }
 
     MessageType type() override
@@ -40,11 +41,11 @@ protected:
     static constexpr MessageType typeId_ = 1;
 };
 
-class HealingMessage : public BaseMessage 
+class HealingMessage : public BaseMessage
 {
 public:
     HealingMessage() {}
-    ~HealingMessage() {}
+    virtual ~HealingMessage() {}
     void printMessage() override {
         std::cout << "---I am healing message---" << std::endl;
     }
@@ -63,7 +64,7 @@ class MissionCompletedMessage : public BaseMessage
 {
 public:
     MissionCompletedMessage() {}
-    ~MissionCompletedMessage() {}
+    virtual ~MissionCompletedMessage() {}
     void printMessage() override {
         std::cout << "---I am mission completed message---" << std::endl;
     }

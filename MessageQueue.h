@@ -1,6 +1,6 @@
 
-#ifndef MESSAGEQUEUE_H_
-#define MESSAGEQUEUE_H_
+#ifndef MESSAGE_QUEUE_H
+#define MESSAGE_QUEUE_H
 
 #include "Message.h"
 #include <memory>
@@ -9,7 +9,7 @@
 /// A list of messages that can be iterated over.
 class MessageQueue
 {
-public: 
+public:
     MessageQueue() : activeMessageStart_(0), activeMessageCount_(0)
     {
         //Determining the messages_ vector capacity
@@ -87,9 +87,9 @@ public:
     const_iterator end() const { return messages_.begin() + activeMessageCount_; }
 
     /// Returns the message at the specified index
-    std::shared_ptr<BaseMessage>& getMessage(std::size_t const index)
+    const std::shared_ptr<BaseMessage>& getMessage(std::size_t const index)
     {
-            return messages_[activeMessageStart_ + index];
+        return messages_[activeMessageStart_ + index];
     }
 
     /// Returns the number of active messages that can be iterated over.
