@@ -59,7 +59,7 @@ std::vector<std::shared_ptr<BaseMessage>>::const_iterator MessageSystem::end() c
 std::size_t MessageSystem::count() const
 {
     return queue.count();
-}
+} 
 
 /// Returns the number of active messages of the specified type
 std::size_t MessageSystem::count(MessageType const type) const

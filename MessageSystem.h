@@ -46,7 +46,7 @@ public:
 
     /// Prints all active messages of the specified type
     void printAllActiveMessagesOfSameType(MessageType const type);
-
+     
     /// Returns the message at the specified index
     const std::shared_ptr<BaseMessage>& getMessage(std::size_t const index);
 

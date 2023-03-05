@@ -51,7 +51,7 @@ public:
     }
 
     MessageType type() override
-    {
+    { 
         return typeId_;
     }
 

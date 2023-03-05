@@ -2,7 +2,7 @@
 
 //Run this function in main() if you want to test MessageSystem class
 void testingMessageSystem(MessageSystem& messageSystem)
-{
+{ 
     //Sending new messages.
     messageSystem.send(std::make_shared<DamageMessage>());
     messageSystem.send(std::make_shared<HealingMessage>());

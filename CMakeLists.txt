@@ -7,3 +7,4 @@ set( EXE_NAME test )
 add_executable( ${EXE_NAME} MessageSystem.cpp main.cpp   )
 install( TARGETS ${EXE_NAME} RUNTIME DESTINATION bin )
 
+ 

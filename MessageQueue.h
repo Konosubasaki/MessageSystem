@@ -108,7 +108,7 @@ public:
         return activeMessageCount_ - activeMessageStart_;
     }
 
-private:
+private: 
     /// Holds all messages.
     MessageList messages_;
 
